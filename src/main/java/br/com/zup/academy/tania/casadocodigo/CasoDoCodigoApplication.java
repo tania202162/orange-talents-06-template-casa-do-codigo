@@ -1,4 +1,4 @@
-package br.com.zup.academy.tania.casodocodigo;
+package br.com.zup.academy.tania.casadocodigo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
