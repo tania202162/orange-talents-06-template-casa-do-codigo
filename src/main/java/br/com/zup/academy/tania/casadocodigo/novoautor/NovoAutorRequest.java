@@ -4,9 +4,10 @@ import javax.persistence.Column;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import br.com.zup.academy.tania.casadocodigo.Validador.UniqueValue;
+import br.com.zup.academy.tania.casadocodigo.novacategoria.Categoria;
 
 public class NovoAutorRequest {
-	
 	
 	@NotBlank 
 	@Column(nullable=false)
@@ -14,6 +15,7 @@ public class NovoAutorRequest {
 	@NotBlank 	
 	@Email
 	@Column(nullable=false)
+	@UniqueValue(domainClass = Autor.class, fieldName = "email")
 	private String email;
 	@NotBlank
 	@Size(max = 400)

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.zup.academy.tania.casadocodigo.repository.AutorRepository;
 
 @RestController
-//2
 public class AutoresController {
 
 	@Autowired
@@ -26,16 +25,10 @@ public class AutoresController {
 
 	@PostMapping(value = "/autores")
 	@Transactional
-	// 1
-	// 2
 	public String cria(@RequestBody @Valid NovoAutorRequest request) {
 		Autor autor = request.toModel();
 		Optional<Autor> listaEmail = autorRepository.findByEmail(autor.getEmail());
-		if (listaEmail.isPresent()) {
-			return "Atenção!!! Email já existente!!";
-		} else {
-			manager.persist(autor);
-			return autor.toString();
-		}
+		manager.persist(autor);
+		return autor.toString();
 	}
 }

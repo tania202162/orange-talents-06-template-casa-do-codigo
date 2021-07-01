@@ -1,4 +1,5 @@
 package br.com.zup.academy.tania.casadocodigo.novacategoria;
+import javax.validation.constraints.NotNull;
 
 import java.net.http.HttpResponse;
 import java.util.Optional;
@@ -29,10 +30,14 @@ public class CategoriaController {
 
 	@PostMapping(value = "/categorias")
 	@Transactional
-	public ResponseEntity<Categoria> cria(@RequestBody @Valid NovaCategoriaRequest request) {
+	public String cria(@RequestBody @Valid NovaCategoriaRequest request) {
 		Categoria categoria = request.toModel();
 		Optional<Categoria> listaCategoria = categoriaRepository.findByNome(categoria.getNome());
-		 
+		manager.persist(categoria); 
+		return categoria.toString();
+		
+		
+	/*	
 		if (listaCategoria.isPresent()) {
 			return new ResponseEntity<Categoria> (HttpStatus.BAD_REQUEST);
 		} 
@@ -40,7 +45,8 @@ public class CategoriaController {
 		  else {
 			  manager.persist(categoria); 
 			  return new ResponseEntity<Categoria> (categoria,HttpStatus.OK);
-		  }
+		  } */
+		  
 	}
 	
 }
