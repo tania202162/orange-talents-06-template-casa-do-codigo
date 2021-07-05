@@ -57,21 +57,37 @@ public class Livro {
 	@NotNull
 	@Future
 	@JsonFormat(pattern = "dd/MM/yyyy", shape = Shape.STRING)
-	private  LocalDate data; // publicacao 
-	
+	private LocalDate data; // publicacao
+
 	@ManyToOne
 	private @NotNull @Valid Categoria categoria;
+
 	public Categoria getCategoria() {
 		return categoria;
-	}	
-			
+	}
+
 	@ManyToOne
 	private @NotNull @Valid Autor autor;
+
 	public Autor getAutor() {
 		return autor;
 	}
-	
-	
+
+	public Livro(@NotNull @Future LocalDate data, @NotBlank String isbn, @NotNull @Min(100) int pagina,
+			@Min(20) @NotNull BigDecimal preco, @NotBlank @Size(max = 500) String resumo, @NotBlank String sumario,
+			@NotBlank String titulo, @NotNull @Valid Autor autor, @Valid @NotNull Categoria categoria) {
+
+		this.titulo = titulo;
+		this.resumo = resumo;
+		this.sumario = sumario;
+		this.preco = preco;
+		this.pagina = pagina;
+		this.isbn = isbn;
+		this.data = data;
+		this.autor = autor;
+		this.categoria = categoria;
+	}
+
 	public String getTitulo() {
 		return titulo;
 	}
@@ -97,33 +113,20 @@ public class Livro {
 	}
 
 	public LocalDate getData() {
-		return data;   
+		return data;
 	}
-		
+
 	public Long getId() {
 		return id;
 	}
 
-	public Livro( @NotNull @Future LocalDate data, @NotBlank String isbn,@NotNull @Min(100) int pagina,@Min(20) @NotNull BigDecimal preco,
-			@NotBlank @Size(max = 500) String resumo, @NotBlank String sumario, @NotBlank String titulo,  
-			@NotNull @Valid Autor autor ,@Valid @NotNull Categoria categoria) {
-		      
-       	this.titulo = titulo;
-		this.resumo = resumo;
-		this.sumario = sumario;
-		this.preco = preco;
-		this.pagina = pagina;
-		this.isbn = isbn;
-		this.data = data;
-		this.autor = autor;
-		this.categoria = categoria;
-	}
-		
 	@Override
 	public String toString() {
 		return "Livro: [id= " + id + ",titulo=" + titulo + ", sumario=" + sumario + ", preco=" + preco + ", pagina="
-				+ pagina + ",isbn=" + isbn + ",data(yyyy-MM-dd)=" + data + ", autor_id=" + autor + ", categoria_id=" + categoria + "]";
-	} 
-	public Livro(){
+				+ pagina + ",isbn=" + isbn + ",data(yyyy-MM-dd)=" + data + ", autor_id=" + autor + ", categoria_id="
+				+ categoria + "]";
+	}
+
+	public Livro() {
 	}
 }
