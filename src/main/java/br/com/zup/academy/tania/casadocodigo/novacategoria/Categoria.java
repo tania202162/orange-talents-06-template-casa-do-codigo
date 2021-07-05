@@ -27,6 +27,9 @@ public class Categoria {
 		return nome;
 	}
 
+	public Long getId() {
+		return id;
+	}
 	@Deprecated
 	public Categoria() {
 	}

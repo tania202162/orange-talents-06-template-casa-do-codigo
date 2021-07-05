@@ -11,5 +11,4 @@ import br.com.zup.academy.tania.casadocodigo.novoautor.Autor;
 public interface AutorRepository extends JpaRepository<Autor, Long> {
 
 	Optional<Autor> findByEmail(String email);
-
 }

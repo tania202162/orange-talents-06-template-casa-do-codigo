@@ -48,7 +48,11 @@ public class Autor {
 
 	@Override
 	public String toString() {
-		return "Autor: [id= " + id + ",nome=" + nome + ", email=" + email + ", descricao=" + descricao
+		return "Autor: [id= " + getId() + ",nome=" + nome + ", email=" + email + ", descricao=" + descricao
 				+ ", instanteCriacao=" + instanteCriacao + "]";
+	}
+
+	public Long getId() {
+		return id;
 	}
 }

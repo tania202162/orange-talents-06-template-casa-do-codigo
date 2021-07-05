@@ -5,7 +5,6 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import br.com.zup.academy.tania.casadocodigo.Validador.UniqueValue;
-import br.com.zup.academy.tania.casadocodigo.novacategoria.Categoria;
 
 public class NovoAutorRequest {
 	
