@@ -97,4 +97,5 @@ public class NovoLivroRequest {
 		@NotNull Categoria categoria = manager.find(Categoria.class, categoria_id);
 		return new Livro(data, isbn, pagina, preco, resumo, sumario, titulo, autor, categoria);
 	}
-}
+
+	}

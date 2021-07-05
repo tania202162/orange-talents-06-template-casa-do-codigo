@@ -99,7 +99,11 @@ public class Livro {
 	public LocalDate getData() {
 		return data;   
 	}
-	
+		
+	public Long getId() {
+		return id;
+	}
+
 	public Livro( @NotNull @Future LocalDate data, @NotBlank String isbn,@NotNull @Min(100) int pagina,@Min(20) @NotNull BigDecimal preco,
 			@NotBlank @Size(max = 500) String resumo, @NotBlank String sumario, @NotBlank String titulo,  
 			@NotNull @Valid Autor autor ,@Valid @NotNull Categoria categoria) {
@@ -118,6 +122,8 @@ public class Livro {
 	@Override
 	public String toString() {
 		return "Livro: [id= " + id + ",titulo=" + titulo + ", sumario=" + sumario + ", preco=" + preco + ", pagina="
-				+ pagina + ",isbn=" + isbn + ",data=" + data + ", autor_id=" + autor + ", categoria_id=" + categoria + "]";
+				+ pagina + ",isbn=" + isbn + ",data(yyyy-MM-dd)=" + data + ", autor_id=" + autor + ", categoria_id=" + categoria + "]";
 	} 
+	public Livro(){
+	}
 }
