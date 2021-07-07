@@ -1,7 +1,5 @@
 package br.com.zup.academy.tania.casadocodigo.novacategoria;
-import javax.validation.constraints.NotNull;
 
-import java.net.http.HttpResponse;
 import java.util.Optional;
 
 import javax.persistence.EntityManager;
@@ -10,9 +8,6 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

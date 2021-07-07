@@ -33,6 +33,10 @@ public class Estado {
 		this.pais = pais;
 	}
 
+	public Estado() {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Estado: [id= " + id + ",nome=" + nome + ", pais_id=" + pais + "]";
